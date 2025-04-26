@@ -11,10 +11,11 @@ ENV PYTHONUNBUFFERED=1
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
-RUN gdown --id 1vtJjr0nUWmyMs9_D2Wx6I3GnfhJ4o3vr -O FSL.pth
+# RUN gdown --id 1vtJjr0nUWmyMs9_D2Wx6I3GnfhJ4o3vr -O FSL.pth
 
 WORKDIR /app
 COPY . /app
+RUN gdown --id 1vtJjr0nUWmyMs9_D2Wx6I3GnfhJ4o3vr -O FSL.pth
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
 # For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers
