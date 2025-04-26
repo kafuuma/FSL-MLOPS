@@ -11,6 +11,7 @@ ENV PYTHONUNBUFFERED=1
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
+RUN gdown --id 1vtJjr0nUWmyMs9_D2Wx6I3GnfhJ4o3vr -O FSL.pth
 
 WORKDIR /app
 COPY . /app
